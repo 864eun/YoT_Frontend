@@ -1,0 +1,39 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+// 기본적인 컬러 팔레트 설정
+$color-1: #FFFDF8; // 가장 밝은 색
+$color-2: #F6F1E0;
+$color-3: #ECE4CE;
+$color-4: #CFC4B1;
+$color-5: #A59983;
+$color-6: #887F6F; // 가장 어두운 색
+
+// 폰트 사이즈 설정 (em 단위, 기본 font-size를 10px로 설정)
+html {
+  font-size: 10px; // em 단위 계산을 위한 기준값 (1em = 10px)
+}
+
+// 폰트 사이즈 2단위로 커지게 설정
+$font-size-base: 1em; // 10px
+$font-size-2: 1.2em; // 12px
+$font-size-3: 1.4em; // 14px
+$font-size-4: 1.6em; // 16px
+$font-size-5: 1.8em; // 18px
+$font-size-6: 2em; // 20px
+
+// 기본 폰트 스타일 설정
+body {
+  font-family: 'Pretendard', sans-serif; // 프리텐다드 폰트 적용
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $color-6; // 텍스트 기본 색상
+}
+
+// 컬러를 쉽게 사용할 수 있도록 mixin 설정
+@mixin background-color($color) {
+  background-color: $color;
+}
+
+@mixin text-color($color) {
+  color: $color;
+}
