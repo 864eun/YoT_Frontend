@@ -1,0 +1,43 @@
+.header_container {
+    display: flex;
+    align-items: center;
+  
+    width: 100vw;
+    height: 95px;
+    padding: 2.2em;
+  
+    @include background-color($color-2);
+  
+    .nav_container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      max-width: inherit;
+  
+      .logo_container {
+        width: 70%;
+        font-size: 24px;
+      }
+  
+      .log_in_container {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 16px;
+        font-weight: bold;
+      }
+  
+      .menu_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 1em;
+  
+        .menu_icon {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,6 @@
+.footer_container{
+    width: 100%;
+    max-width: inherit;
+    height: 288px;
+    @include background-color($color-5);
+}

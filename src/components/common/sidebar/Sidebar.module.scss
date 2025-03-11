@@ -1,0 +1,25 @@
+.sidebar_container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw; // 사이드바 너비 조정
+    height: 100vh; // 화면 전체 높이
+    position: fixed; // 고정 위치
+    top: 0; // 상단 고정
+    
+      transform-origin:left;	
+      transform : translateX(0);	
+    
+      transition : transform ease-in-out .5s ;
+      
+      background-color:$color-2;
+  
+}
+  .header_container{
+  }
+  
+  .exist_icon{
+  }
+  
+  .main-container{
+  }
+  

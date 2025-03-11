@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Header() {
+function Home() {
   return (
     <div>
-      
+      <div>홈화면</div>
     </div>
   )
 }
 
-export default Header
+export default Home
