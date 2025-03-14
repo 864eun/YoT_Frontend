@@ -1,8 +1,8 @@
 import styles from './ServiceHeader.module.scss'
 
 interface ServiceHeaderProps{
-  title: string | undefined;
-  description: string | undefined;
+  title: string ;
+  description: string ;
 }
 
 function ServiceHeader({title, description}:ServiceHeaderProps) {

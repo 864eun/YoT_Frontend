@@ -11,13 +11,5 @@
     }
   }
   
-  .overlay {
-    position: fixed;
-    top: 95px; // 헤더 높이
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 95px); // 헤더 높이 제외한 높이
-    background-color: rgba(135, 127, 111, 0.59); // #887F6F (59% 투명도)
-    z-index: 1;
-  }
+
   

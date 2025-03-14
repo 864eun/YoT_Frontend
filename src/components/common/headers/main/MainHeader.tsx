@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './MainHeader.module.scss';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -6,7 +5,7 @@ interface MainHeaderProps {
   onMenuClick: () => void;
 }
 
-const MainHeader: React.FC<MainHeaderProps> = ({ onMenuClick }) => {
+const MainHeader = ({ onMenuClick } : MainHeaderProps) => {
   return (
     <header className={styles.header_container}>
       <div className={styles.nav_container}>

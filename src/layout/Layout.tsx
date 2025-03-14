@@ -4,28 +4,21 @@ import ServiceHeader from '../components/common/headers/service/ServiceHeader';
 import Footer from '../components/common/footer/Footer';
 import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
-import Sidebar from '../components/common/sidebar/sidebar';
+import Sidebar from '../components/common/sidebar/Sidebar';
+import Overlay from '../components/common/overlay/Overlay';
 
-interface LayoutProps {
-  serviceTitle?: string;
-  serviceDescription?: string;
-  hideServiceHeader?: boolean;
-  children?: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ 
-  serviceTitle, 
-  serviceDescription, 
-  hideServiceHeader = false 
-}) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Layout = ({ serviceTitle, serviceDescription, hideServiceHeader = false }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsSidebarOpen(!isSidebarOpen);
+    setIsOverlayOpen(!isOverlayOpen); 
   };
 
   const handleCloseSidebar = () => {
-    setIsMenuOpen(false);
+    setIsSidebarOpen(false);
+    setIsOverlayOpen(false); 
   };
 
   return (
@@ -34,11 +27,8 @@ const Layout: React.FC<LayoutProps> = ({
       {!hideServiceHeader && (
         <ServiceHeader title={serviceTitle} description={serviceDescription} />
       )}
-      {isMenuOpen && (
-        <div className={styles.overlay} onClick={handleCloseSidebar}>
-          <Sidebar onClose={handleCloseSidebar} />
-        </div>
-      )}
+      <Overlay isOpen={isOverlayOpen} /> 
+      <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
       <main className={styles.main_container}>
         <Outlet />
       </main>
