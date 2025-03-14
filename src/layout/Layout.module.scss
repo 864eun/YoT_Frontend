@@ -1,0 +1,15 @@
+.layout_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 100%;
+    min-height: 100vh;
+  
+    .main_container {
+      flex-grow: 1;
+    }
+  }
+  
+
+  
