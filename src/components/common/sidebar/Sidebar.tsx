@@ -24,7 +24,7 @@ const Sidebar = ({ onClose, isOpen }: SidebarProps) => {
           />
         </div>
       </div>
-      <div className={style.main_container}>
+      <div className={style.content_container}>
         <ul className={style.ul_container}>
           <li>로그인</li>
           <li>나만의 코스</li>
