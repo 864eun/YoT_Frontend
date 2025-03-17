@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react'; // ReactNode 추가
+import { Outlet } from 'react-router-dom';
 import MainHeader from '../components/common/headers/main/MainHeader';
 import ServiceHeader from '../components/common/headers/service/ServiceHeader';
 import Footer from '../components/common/footer/Footer';
-import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.scss';
 import Sidebar from '../components/common/sidebar/Sidebar';
 import Overlay from '../components/common/overlay/Overlay';
 
-const Layout = ({ serviceTitle, serviceDescription, hideServiceHeader = false }) => {
+interface LayoutProps {
+  serviceTitle?: string;
+  serviceDescription?: string; 
+  hideServiceHeader?: boolean; 
+  children: ReactNode; 
+}
+
+const Layout = ({ serviceTitle, serviceDescription, hideServiceHeader = false, children } :LayoutProps ) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   const handleMenuClick = () => {
     setIsSidebarOpen(!isSidebarOpen);
-    setIsOverlayOpen(!isOverlayOpen); 
+    setIsOverlayOpen(!isOverlayOpen);
   };
 
   const handleCloseSidebar = () => {
     setIsSidebarOpen(false);
-    setIsOverlayOpen(false); 
+    setIsOverlayOpen(false);
   };
 
   return (
@@ -27,9 +34,10 @@ const Layout = ({ serviceTitle, serviceDescription, hideServiceHeader = false })
       {!hideServiceHeader && (
         <ServiceHeader title={serviceTitle} description={serviceDescription} />
       )}
-      <Overlay isOpen={isOverlayOpen} /> 
+      <Overlay isOpen={isOverlayOpen} />
       <Sidebar isOpen={isSidebarOpen} onClose={handleCloseSidebar} />
       <main className={styles.main_container}>
+        {children} {/* children을 여기에 렌더링 */}
         <Outlet />
       </main>
       <Footer />
