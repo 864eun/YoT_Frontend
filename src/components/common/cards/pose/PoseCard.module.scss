@@ -1,0 +1,56 @@
+.posecard_container {
+    width: 150px;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top_section {
+    height: 140px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    
+    @include background-color($color-4);
+    
+    .pose_image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: 1.5px solid #A59983;
+    }
+  }
+  
+  .bottom_section {
+    height: 60px;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    
+    @include background-color($color-1);
+    
+    .pose_name {
+      font-size: 1.2em;
+      font-weight: 500;
+      @include text-color($color-5);
+    }
+  }
+  
