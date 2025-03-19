@@ -1,6 +1,22 @@
-.header_container{
+// ServiceHeader.module.scss
+
+.header_container {
     width: 100%;
     max-width: inherit;
     height: 136px;
-    background-color:cadetblue;
+    @include background-color($color-4);
+    padding: 3em 2em;
+
+    .title_container {
+        text-align: center;
+
+        h2 {
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    }
 }

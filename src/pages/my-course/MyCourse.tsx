@@ -1,6 +1,9 @@
 import style from './MyCourse.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import PoseCard from '../../components/common/cards/pose/PoseCard';
+import NextButton from '../../components/common/buttons/nextbutton/NextButton';
+
+
 
 function MyCourse() {
   return (
@@ -35,7 +38,13 @@ function MyCourse() {
             <PoseCard />
             <PoseCard />
             <PoseCard />
+            <PoseCard />
+            <PoseCard />
             </div>
+          </div>
+
+          <div className={style.button_container}>
+            <NextButton text="다음으로"/>
           </div>
       </section>
     </div>

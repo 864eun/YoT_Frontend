@@ -1,8 +1,9 @@
 import styles from './ServiceHeader.module.scss'
+import React, { ReactNode } from 'react';
 
 interface ServiceHeaderProps{
   title?: string ;
-  description?: string ;
+  description?: ReactNode;
 }
 
 function ServiceHeader({title, description}:ServiceHeaderProps) {

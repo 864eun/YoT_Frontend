@@ -1,0 +1,23 @@
+.nextbutton_container{
+    width: 87%;
+    height: 80px;
+    display: flex; /* flexbox 활성화 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    
+    .nextbutton{
+        width: 100%;
+        height: 70%;
+        font-size: 1.7em;
+        font-weight: 600;
+        @include background-color($color-3);
+        border-radius: 12px;
+        border: none;
+
+        &:hover{
+            @include background-color($color-4);
+            @include text-color($color-6);
+            font-weight: 600;
+        }
+    }
+}

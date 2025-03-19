@@ -9,7 +9,7 @@ import Overlay from '../components/common/overlay/Overlay';
 
 interface LayoutProps {
   serviceTitle?: string;
-  serviceDescription?: string; 
+  serviceDescription?: ReactNode; 
   hideServiceHeader?: boolean; 
   children: ReactNode; 
 }
