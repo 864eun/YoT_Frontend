@@ -1,0 +1,13 @@
+.longbutton_container{
+    @include size-style(87%, 80px);
+    @include center-style(); /* Apply the center alignment mixin */
+
+    .longbutton{
+        @include size-style(100%, 70%); /* Apply the button size mixin */
+        @include button-style($color-3, $color-5, 1.7em, 600, 12px); /* Apply button style mixin */
+        
+        &:hover{
+            @include button-hover-style($color-4, $color-6, 600); /* Apply button hover style mixin */
+        }
+    }
+}

@@ -16,20 +16,25 @@ const App = () => {
             </Layout>
           }
         />
-          <Route
-          path="/my-course"
-          element={
-            <Layout serviceTitle="나만의 코스" serviceDescription="나만을 위한 코스를 만들어보세요.">
-              <Routes>
-                <Route index element={<MyCourse />} />
-              </Routes>
-            </Layout>
-          }
-        />
+<Route
+  path="/my-course"
+  element={
+    <Layout serviceTitle="나만의 코스" serviceDescription={
+      <>
+        원하는 자세, 배경 노래를 선택해 <br />
+        나만을 위한 코스를 만들어보세요.
+      </>
+    }>
+      <Routes>
+        <Route index element={<MyCourse />} />
+      </Routes>
+    </Layout>
+  }
+/>
         <Route
           path="/today-course"
           element={
-            <Layout serviceTitle="오늘의 코스" serviceDescription="오늘의 코스를 추천해드립니다.">
+            <Layout serviceTitle="오늘의 코스" serviceDescription={<>오늘의 코스를 추천해드립니다.</>}>
               <Routes>
                 <Route index element={<TodayCourse />} />
               </Routes>

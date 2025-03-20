@@ -3,10 +3,10 @@
     align-items: center;
   
     width: 100vw;
-    height: 90px;
-    padding: 2.2em;
+    height: 80px;
+    padding: 3em;
   
-    @include background-color($color-2);
+    background-color:$color-2;
   
     .nav_container {
       display: flex;
