@@ -19,7 +19,7 @@
     
     position: relative;
     
-    @include background-color($color-4);
+    background-color:$color-4;
     
     .pose_image {
       max-width: 100%;
@@ -45,12 +45,12 @@
     align-items: center;
     padding-left: 10px;
     
-    @include background-color($color-1);
+    background-color:$color-1;
     
     .pose_name {
       font-size: 1.2em;
       font-weight: 500;
-      @include text-color($color-5);
+      color:$color-5;
     }
   }
   

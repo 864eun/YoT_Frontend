@@ -51,3 +51,33 @@ body {
 @mixin font-size($size) {
   font-size: $size;
 }
+
+// 버튼 호버 mixin
+@mixin button-hover-style($color1, $color2, $font-weight) {
+  background-color : $color1;
+  color : $color2;
+  font-weight: $font-weight;
+  cursor: pointer;
+}
+
+@mixin button-style($color1, $color2,$font-size,$font-weight, $boder-radious) {
+  background-color : $color1;
+  color : $color2;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  border-radius:$boder-radious;
+  border: none;
+  cursor: pointer;
+}
+
+
+@mixin button-center-style(){
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+@mixin size-style($width, $height){
+  width: $width;
+  height: $height;
+}

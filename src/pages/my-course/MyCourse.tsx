@@ -1,7 +1,9 @@
 import style from './MyCourse.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import PoseCard from '../../components/common/cards/pose/PoseCard';
-import NextButton from '../../components/common/buttons/nextbutton/NextButton';
+import LongButton from '../../components/common/buttons/longbutton/LongButton';
+import TimeMusicSelector from '../../components/common/underbar/timemusicselector/TimeMusicSelector';
+
 
 
 
@@ -44,7 +46,11 @@ function MyCourse() {
           </div>
 
           <div className={style.button_container}>
-            <NextButton text="다음으로"/>
+            <LongButton text="다음으로"/>
+          </div>
+
+          <div className={style.underbar_container}>
+          <TimeMusicSelector/> 
           </div>
       </section>
     </div>

@@ -1,0 +1,65 @@
+.timemusicselector_container {
+  display: flex;
+  flex-direction: column; 
+  width: 100vw;
+  z-index: 999;
+  height: auto;
+  position: relative;
+
+  .timemusicselector_outside {
+    height: 40px;
+    width: 100vw;
+    background-color :$color-5;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    .icons_container {
+      position: relative;
+      .clear_icon {
+        position: absolute;
+        font-size: 23px;
+        right: 20px;
+        top: 10px;
+      }
+    }
+  }
+
+  .timemusicselector_inside {
+    height: 340px; 
+    width: 100vw;
+    background-color:$color-2;
+    padding: 1.5em 1.5em;
+    font-size: 2.3em;
+    display: flex;
+    flex-direction: column; 
+
+    .time_container,
+    .music_container {
+      flex: 1; 
+
+      h2 {
+        font-weight: 530;
+      }
+
+      .timebutton_container {
+        padding: 20px 0px;
+        gap: 10px; 
+
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto; 
+
+        scroll-snap-type: x mandatory; 
+      }
+
+      .backgoundmusiccard_container {
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto; 
+        gap: 10px;
+        scroll-snap-type: x mandatory; 
+      }
+    }
+  }
+}
