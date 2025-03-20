@@ -2,7 +2,7 @@
     border-radius: 12px;
     border: solid 1.9px #887F6F;
 
-    @include button-center-style();
+    @include center-style();
     @include size-style(60px, 25px);
 
     font-weight: 700;

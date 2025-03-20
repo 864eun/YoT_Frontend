@@ -7,7 +7,7 @@
         flex-shrink: 0;
         padding: 0px 15px;
 
-        @include button-center-style();
+        @include center-style();
 
         &:hover{
         @include button-hover-style($color-4, $color-2, 500);};

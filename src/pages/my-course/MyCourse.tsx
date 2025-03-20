@@ -1,13 +1,17 @@
-import style from './MyCourse.module.scss';
-import SearchIcon from '@mui/icons-material/Search';
-import PoseCard from '../../components/common/cards/pose/PoseCard';
-import LongButton from '../../components/common/buttons/longbutton/LongButton';
-import TimeMusicSelector from '../../components/common/underbar/timemusicselector/TimeMusicSelector';
-
-
-
+import { useState } from "react";
+import style from "./MyCourse.module.scss";
+import SearchIcon from "@mui/icons-material/Search";
+import PoseCard from "../../components/common/cards/pose/PoseCard";
+import LongButton from "../../components/common/buttons/longbutton/LongButton";
+import TimeMusicSelector from "../../components/common/underbar/timemusicselector/TimeMusicSelector";
 
 function MyCourse() {
+  const [showTimeMusicSelector, setshowTimeMusicSelector] = useState(false);
+
+  const handleNestButtonClick = () => {
+    setshowTimeMusicSelector(!showTimeMusicSelector);
+  };
+
   return (
     <div className={style.mycourse_container}>
       <section>
@@ -34,24 +38,31 @@ function MyCourse() {
           </nav>
         </div>
 
-          <div className={style.pose_cards_container}>
-            <div className={style.pose_cards_container_inner}>
+        <div className={style.pose_cards_container}>
+          <div className={style.pose_cards_container_inner}>
             <PoseCard />
             <PoseCard />
             <PoseCard />
             <PoseCard />
             <PoseCard />
             <PoseCard />
-            </div>
           </div>
+        </div>
 
-          <div className={style.button_container}>
-            <LongButton text="다음으로"/>
-          </div>
+        <div className={style.button_container}>
+          <LongButton text="다음으로" onClick={handleNestButtonClick} />
+        </div>
 
-          <div className={style.underbar_container}>
-          <TimeMusicSelector/> 
-          </div>
+        <div
+          className={`${style.underbar_container} ${
+            showTimeMusicSelector ? style.show : ""
+          }`}
+        >
+          <TimeMusicSelector />
+          {showTimeMusicSelector && (
+            <LongButton text="동영상 만들기" onClick={handleNestButtonClick} />
+          )}
+        </div>
       </section>
     </div>
   );

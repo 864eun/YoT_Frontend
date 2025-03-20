@@ -1,6 +1,5 @@
 .mycourse_container {
-    width: 100vw;
-    height: 100%;
+    @include size-style(100vw, 100%);
     padding: 3em 3em;
     
     display: flex;
@@ -54,8 +53,7 @@
     }
   
     .poseselect_container {
-      width: 100%;
-      height: 80px;
+      @include size-style(100%, 80px);
       display: flex;
       align-items: center;
     
@@ -93,8 +91,7 @@
     }
   
     .pose_cards_container {
-      width: 100%;
-      height: 100%;
+      @include size-style(100%, 100%);
       padding-top: 10px;
       padding-bottom: 30px;
   
@@ -113,20 +110,26 @@
       bottom: 0; /* 화면 하단에 고정되도록 설정 */
       z-index: 100; /* 다른 요소들 위에 위치하도록 설정 */
       width: 100vw; /* 버튼이 전체 너비를 차지하게 설정 */
-      display: flex;
-      justify-content: center; /* 수평 중앙 정렬 */
-      align-items: center; /* 수직 중앙 정렬 */
+      @include center-style();
       left: 0; /* 화면 왼쪽에 붙도록 설정 */
       margin-left: -3em; /* 왼쪽 여백을 제거 */
       margin-bottom: -3em;
     }
 
     .underbar_container{
-      margin-left: -3em;
-      left: 0;  
-      height: auto; 
-      width: 100vw;
+      position: fixed; /* 고정 위치로 설정 */
+      bottom: 0; /* 화면 아래에 고정 */
+      left: 0; /* 화면 왼쪽에 맞춤 */
+ 
+      @include size-style(auto, 100vw);
+      z-index: 100;
+      transform: translateY(100%); /* 기본적으로 아래로 숨김 */
+      transition: transform 0.3s ease-out; /* 트랜지션 설정 */
+    }
 
+    .underbar_container.show {
+      display: block;
+      transform: translateY(0); /* 슬라이드 업 */
 
     }
   }
