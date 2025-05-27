@@ -4,6 +4,12 @@ import { SlDrawer } from 'react-icons/sl';
 import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
+  const navLinks = document.querySelector('.nav-links');
+  function onToggleMenu(e) {
+    e.name = e.name === 'menu' ? 'close' : 'menu';
+    navLinks.classList.toggle('top-[9%]');
+  }
+
   const navItems = [
     { id: 'home', label: 'Home', icon: <FaHome />, to: '/' },
     {
@@ -25,43 +31,37 @@ function Header() {
     { id: 'logIn', label: 'Home', icon: <FaHome />, to: '/login' },
     { id: 'Register', label: 'Home', icon: <FaHome />, to: '/register' },
   ];
+
   return (
-    <header className="z-30 sticky top-0 bg-stone-200 text-stone-500 px-4">
-      <div className="container flex mx-auto justify-between items-center h-14">
+    <header className="bg-stone-200">
+      <nav className="flex justify-between items-center w-[92%]  mx-auto">
         <div>
-          <Link to="/" className="text-xl font-bold">
-            YoT
-          </Link>
+          <img
+            className="w-16 cursor-pointer"
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png"
+            alt="..."
+          />
         </div>
-        <nav className="hidden md:flex space-x-4">
-          {navItems.map(item => (
-            <NavLink
-              key={item.id}
-              className="hover:font-semibold text-stone-600 duration-300 transition-colors"
-              to={item.to}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
-        <button className="md:hidden">
-          <FaBars />
-        </button>
-        <div className="md:flex  hidden gap-2">
-          <NavLink
-            to={'/login'}
-            className="hidden md:block border-1 border-stone-500  hover:bg-stone-500 text-stone-500  hover:text-stone-100 text-base font-bold py-1 px-1 rounded transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-opacity-50"
-          >
-            Log-in
-          </NavLink>
-          <NavLink
-            to={'/register'}
-            className="hidden md:block border-1 bg-stone-500 border-stone-500 hover:bg-stone-600 text-stone-100 hover:text-stone-200 text-base font-bold py-1 px-1 rounded transition-colors duration-300 focus:outline-none focus:ring-2  focus:ring-opacity-50"
-          >
-            Resister
-          </NavLink>
+        <div className="nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+          <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+            {navItems.map(item => (
+              <NavLink
+                key={item.id}
+                to={item.to}
+                className="hover:text-stone-500 hover:font-semibold"
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </ul>
         </div>
-      </div>
+        <div className="flex items-center gap-6">
+          <button className="bg-stone-400 text-stone-200 px-5 py-2 rounded-full hover:bg-stone-500">
+            Sign in
+          </button>
+          <FaBars className="md:hidden" />
+        </div>
+      </nav>
     </header>
   );
 }
