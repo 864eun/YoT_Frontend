@@ -2,7 +2,6 @@ import React from 'react';
 
 interface PoseCardProps {
   level?: string;
-  duration?: string;
   imageUrl: string;
   title: string;
   subTitle?: string;
@@ -13,7 +12,6 @@ interface PoseCardProps {
 
 const PoseCard: React.FC<PoseCardProps> = ({
   level = 'beginner',
-  duration = '30s',
   imageUrl,
   title,
   subTitle,
@@ -22,19 +20,19 @@ const PoseCard: React.FC<PoseCardProps> = ({
   onAdd,
 }) => {
   return (
-    <div className=" bg-stone-100 rounded-xl shadow-md overflow-hidden border border-stone-200 w-[230px] md:w-[280px] md:max-w-sm">
+    <div className=" bg-stone-100 rounded-xl shadow-md overflow-hidden border border-stone-200 w-[220px] md:w-[260px] md:max-w-sm">
       <div className="relative">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-56 object-cover bg-stone-200"
+          className="w-full h-56 object-cover bg-stone-200 md:w-[278px] md:h-[192px]"
         />
         <span className="absolute top-3 right-3 bg-stone-400 text-stone-700 text-xs font-semibold px-3 py-1 rounded-full">
           {level}
         </span>
       </div>
       <div className="">
-        <div className="p-5 pb-3 ">
+        <div className="p-5 ">
           <div className=" flex items-start justify-between mb-2">
             <div>
               <h3 className="text-lg font-bold text-stone-900">{title}</h3>
@@ -53,7 +51,7 @@ const PoseCard: React.FC<PoseCardProps> = ({
               +
             </button>
           </div>
-          <p className="hidden md:block text-gray-500 text-sm mb-4 line-clamp-2">
+          <p className="hidden md:block text-gray-500 text-sm mb-2 line-clamp-2">
             {description}
           </p>
         </div>
