@@ -2,8 +2,8 @@ import PoseCard from '../../../components/card/PoseCard';
 
 function PoseSection(props) {
   return (
-    <section>
-      <div>
+    <section className=" px-10 py-10 max-w-screen-2xl mx-auto">
+      <div className="">
         <h2>Today's Recommended Poses</h2>
         <p>
           하루를 시작할 때, 몸에 활력을 주고 마음을 차분하게 해주는 이 선택된

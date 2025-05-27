@@ -2,10 +2,10 @@ import React from 'react';
 
 function IntroSection(props) {
   return (
-    <section className="relative flex items-center justify-center h-screen overflow-hidden">
+    <section className="relative max-w-screen-2xl flex items-center justify-center h-screen overflow-hidden mx-auto">
       {/* 비디오 백그라운드 */}
       <video
-        className="absolute z-10 w-auto min-w-full min-h-full max-w-none object-cover"
+        className="absolute md:h-[1000px] z-10 w-auto min-w-full min-h-full  object-cover"
         src="/home_background_2.mp4"
         autoPlay
         loop
