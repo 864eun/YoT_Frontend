@@ -34,7 +34,7 @@ function Header() {
 
   return (
     <header className="bg-stone-200">
-      <nav className="flex justify-between items-center w-[92%]  mx-auto">
+      <nav className="flex justify-between items-center w-[92%] mx-auto">
         <div>
           <img
             className="w-16 cursor-pointer"
