@@ -20,19 +20,19 @@ const PoseCard: React.FC<PoseCardProps> = ({
   onAdd,
 }) => {
   return (
-    <div className=" bg-stone-100 rounded-xl shadow-md overflow-hidden border border-stone-200 w-[220px] md:w-[260px] md:max-w-sm">
-      <div className="relative">
+    <div className=" rounded-xl mx-h-[368px] shadow-md overflow-hidden border border-stone-200 w-[220px] md:w-[278px] md:max-w-sm">
+      <div className="relative bg-stone-50">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-56 object-cover bg-stone-200 md:w-[278px] md:h-[192px]"
+          className="w-full h-56 object-cover md:w-[278px] md:h-[192px]"
         />
         <span className="absolute top-3 right-3 bg-stone-400 text-stone-700 text-xs font-semibold px-3 py-1 rounded-full">
           {level}
         </span>
       </div>
       <div className="">
-        <div className="p-5 ">
+        <div className="py-4 px-3">
           <div className=" flex items-start justify-between mb-2">
             <div>
               <h3 className="text-lg font-bold text-stone-900">{title}</h3>
@@ -55,7 +55,7 @@ const PoseCard: React.FC<PoseCardProps> = ({
             {description}
           </p>
         </div>
-        <div className="hidden md:block bg-stone-300 px-4 py-3 rounded-b-xl">
+        <div className="hidden md:block  bg-stone-200 px-4 py-3 rounded-b-xl">
           <span className="inline-block border border-slate-300 rounded-full px-3 py-1 text-xs text-slate-600 bg-slate-50">
             {tag}
           </span>
