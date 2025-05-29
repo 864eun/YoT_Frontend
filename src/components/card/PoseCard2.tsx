@@ -1,7 +1,7 @@
 function PoseCard2() {
   return (
     <div className="flex flex-col">
-      <div className="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-md bg-stone-100 relative group">
+      <div className="w-full aspect-[4/5] overflow-hidden rounded-xl shadow-sm bg-stone-100 relative group">
         <img
           src="public/boat.png"
           alt="그레이라떼"

@@ -10,14 +10,14 @@ function PoseSelectSection(props) {
   ];
 
   return (
-    <section className="mb-10">
+    <section className="">
       <div className="flex flex-col">
         <span className="text-[12px] md:text-sm text-stone-500">
           원하는 자세를 골라주세요.
         </span>
         <div className="flex flex-col space-y-5 md:flex-row md:items-center md:justify-between mb-9 ">
           <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-            Pose
+            POSE
           </h2>
           <nav className="flex gap-3">
             {levelItems.map(item => (

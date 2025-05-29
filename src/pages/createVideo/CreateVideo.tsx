@@ -2,6 +2,7 @@ import React from 'react';
 import PoseSelectSection from './sections/PoseSelectSection';
 import AddedPoseListSection from './sections/AddedPoseListSection';
 import MusicSelectSection from './sections/MusicSelectSection';
+import TimeSelectSection from './sections/TimeSelectSection';
 
 function CreateVideo() {
   return (
@@ -14,13 +15,14 @@ function CreateVideo() {
         />
         <div className="absolute top-1/2 left-1/2 z-30 -translate-x-1/2 -translate-y-1/2">
           <h1 className="font-extrabold text-stone-100 text-8xl  whitespace-nowrap">
-            Create Video
+            CREATE VIDEO
           </h1>
         </div>
       </div>
-      <div className="px-8 py-9">
+      <div className="flex flex-col gap-20 px-8 py-9">
         <PoseSelectSection />
         <MusicSelectSection />
+        <TimeSelectSection />
       </div>
     </div>
   );
