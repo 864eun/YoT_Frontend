@@ -3,9 +3,9 @@ import React from 'react';
 function MusicCard(props) {
   return (
     <div className="flex flex-col shadow-sm">
-      <div className="w-full min-h-[100px] min-w-[100px] max-w-[180px] max-h-[180px] aspect-square overflow-hidden rounded-xl shadow-md bg-stone-100">
+      <div className="w-28 md:w-40 lg:w-50  aspect-square overflow-hidden rounded-xl shadow-md bg-stone-100">
         <img
-          className="w-full h-full  object-fill"
+          className="w-full h-full object-fill"
           src="public\backgroundMusic\모닥불.jpg"
         />
       </div>

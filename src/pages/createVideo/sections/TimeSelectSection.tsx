@@ -11,11 +11,11 @@ function TimeSelectSection(props) {
   ];
   return (
     <section>
-      <div>
+      <div className="mb-6">
         <span className="text-[12px] md:text-sm text-stone-500">
           자세 유지 시간을 선택해주세요.
         </span>
-        <h2 className="mb-9 text-5xl md:text-7xl font-extrabold tracking-tight">
+        <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight">
           TIME
         </h2>
       </div>

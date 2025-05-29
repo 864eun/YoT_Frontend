@@ -19,8 +19,9 @@ function CreateVideo() {
           </h1>
         </div>
       </div>
-      <div className="flex flex-col gap-20 px-8 py-9">
+      <div className="flex flex-col gap-10 md:gap-20 px-8 py-9">
         <PoseSelectSection />
+        <AddedPoseListSection />
         <MusicSelectSection />
         <TimeSelectSection />
       </div>
