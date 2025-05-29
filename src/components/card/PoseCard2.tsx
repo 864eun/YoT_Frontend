@@ -29,7 +29,7 @@ function PoseCard2() {
           </div>
         </div>
         <div>
-          <button className="px-2 py-1 text-xs md:px-3 md:py-1 md:text-base font-semibold text-stone-700 rounded-2xl bg-stone-300 md:right-5 md:top-4 hover:bg-stone-700 hover:text-stone-200">
+          <button className="px-2 py-1 text-xs md:px-3 md:py-1 md:text-base font-semibold text-stone-400 rounded-xl border-[1.5px] border-stone-300 md:right-5 md:top-4 hover:bg-stone-700 hover:text-stone-200">
             Add
           </button>
         </div>

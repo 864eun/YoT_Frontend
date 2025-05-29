@@ -1,5 +1,7 @@
 import React from 'react';
 import PoseSelectSection from './sections/PoseSelectSection';
+import AddedPoseListSection from './sections/AddedPoseListSection';
+import MusicSelectSection from './sections/MusicSelectSection';
 
 function CreateVideo() {
   return (
@@ -16,8 +18,9 @@ function CreateVideo() {
           </h1>
         </div>
       </div>
-      <div>
+      <div className="px-8 py-9">
         <PoseSelectSection />
+        <MusicSelectSection />
       </div>
     </div>
   );
