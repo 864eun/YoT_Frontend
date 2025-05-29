@@ -8,7 +8,7 @@ function BenefitCard(props) {
           <FiPlus className="text-3xl" />
         </div>
       </div>
-      <div className="px-7 py-5">
+      <div className="px-7 py-5 ">
         <h3 className="text-xl font-semibold text-center mb-3">
           개인화된 연습
         </h3>

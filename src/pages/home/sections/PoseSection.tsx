@@ -3,13 +3,12 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 function PoseSection(props) {
   return (
-    <section className="text-stone-700  px-10 py-20 max-w-screen-2xl mx-auto">
-      <div className="mb-15">
+    <section className="text-stone-700  px-10 py-15 max-w-screen-2xl mx-auto">
+      <div className="mb-15 text-center">
         <h2 className="text-4xl font-bold mb-4">Today's Recommended Poses</h2>
-        <p className=" text-xl font-medium">
-          몸에 활력을 주고 마음을 차분하게 해주는
-          <br />
-          오늘의 요가 자세들로 시작해 보세요.
+        <p className=" text-normal font-medium">
+          몸에 활력을 주고 마음을 차분하게 해주는 오늘의 요가 자세들로 시작해
+          보세요.
         </p>
       </div>
       <div>
