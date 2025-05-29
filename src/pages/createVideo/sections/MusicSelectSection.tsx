@@ -1,5 +1,5 @@
 import React from 'react';
-import MusicCard from '../../../components/card/MusicCard';
+import MusicCard from '../../../components/cards/MusicCard';
 function MusicSelectSection(props) {
   return (
     <section>

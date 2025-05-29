@@ -1,5 +1,5 @@
 import React from 'react';
-import PoseCard2 from '../../../components/card/PoseCard2';
+import PoseCard2 from '../../../components/cards/PoseCard2';
 
 function PoseSelectSection(props) {
   const levelItems = [
@@ -15,7 +15,7 @@ function PoseSelectSection(props) {
         <span className="text-[12px] md:text-sm text-stone-500">
           원하는 자세를 골라주세요.
         </span>
-        <div className="flex flex-col space-y-5 md:flex-row md:items-center md:justify-between mb-9 ">
+        <div className="flex flex-col space-y-5 lg:flex-row lg:items-center lg:justify-between mb-9 ">
           <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight">
             POSE
           </h2>

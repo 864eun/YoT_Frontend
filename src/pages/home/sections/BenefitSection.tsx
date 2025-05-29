@@ -1,5 +1,5 @@
 import React from 'react';
-import BenefitCard from '../../../components/card/BenefitCard';
+import BenefitCard from '../../../components/cards/BenefitCard';
 
 function BenefitSection(props) {
   return (

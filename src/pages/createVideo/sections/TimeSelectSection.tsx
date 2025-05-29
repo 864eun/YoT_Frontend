@@ -1,5 +1,5 @@
 import React from 'react';
-import TimeCard from '../../../components/card/TimeCard';
+import TimeCard from '../../../components/cards/TimeCard';
 
 function TimeSelectSection(props) {
   const timeItems = [

@@ -1,5 +1,5 @@
 import React from 'react';
-import AddedPoseCard from '../../../components/card/AddedPoseCard';
+import AddedPoseCard from '../../../components/cards/AddedPoseCard';
 
 function AddedPoseListSection(props) {
   return (

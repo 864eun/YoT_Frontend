@@ -1,4 +1,4 @@
-import PoseCard from '../../../components/card/PoseCard';
+import PoseCard from '../../../components/cards/PoseCard';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 function PoseSection(props) {

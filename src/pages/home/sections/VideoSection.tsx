@@ -1,6 +1,6 @@
 import React from 'react';
-import VideoPoseListCard from '../../../components/card/VideoPoseListCard';
-import VideoCard from '../../../components/card/VideoCard';
+import VideoPoseListCard from '../../../components/cards/VideoPoseListCard';
+import VideoCard from '../../../components/cards/VideoCard';
 
 function VideoSection(props) {
   return (
