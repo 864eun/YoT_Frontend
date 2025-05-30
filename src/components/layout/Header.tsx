@@ -21,7 +21,7 @@ function Header() {
       icon: <FaVideo />,
       to: '/create-video',
     },
-    { id: 'myVideo', label: 'myVideo', icon: <SlDrawer />, to: '/myVideo' },
+    { id: 'myVideo', label: 'myVideo', icon: <SlDrawer />, to: '/my-video' },
     {
       id: 'calendar',
       label: 'calendar',
