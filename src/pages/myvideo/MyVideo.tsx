@@ -10,7 +10,7 @@ function MyVideo(props) {
           value={'MY VIDEO'}
         />
       </div>
-      <div>
+      <div className="px-8 py-9">
         <MyVideoSection />
       </div>
     </div>
