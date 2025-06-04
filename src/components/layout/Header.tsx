@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaBars, FaHome, FaVideo, FaCalendarAlt } from 'react-icons/fa';
 import { SlDrawer } from 'react-icons/sl';
 import { NavLink } from 'react-router-dom';
+import LoginButton from '../buttons/LoginButton';
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,12 +31,10 @@ function Header() {
     },
   ];
 
-  // 메뉴 클릭 시 닫기
   const handleMenuClick = () => setMenuOpen(false);
 
   return (
     <>
-      {/* 오버레이: 헤더/메뉴보다 아래(z-40) */}
       {menuOpen && (
         <div
           className="fixed inset-0 bg-black/30 z-40 md:hidden"
@@ -55,7 +54,6 @@ function Header() {
               alt="..."
             />
           </div>
-          {/* 모바일 메뉴 */}
           <div
             className={`
               nav-links transition-all duration-500
@@ -80,11 +78,8 @@ function Header() {
               ))}
             </ul>
           </div>
-          {/* 햄버거 버튼 */}
           <div className="flex items-center gap-6">
-            <button className="bg-stone-400 text-stone-200 px-5 py-2 rounded-full hover:bg-stone-500">
-              Sign in
-            </button>
+            <LoginButton />
             <FaBars
               className="md:hidden cursor-pointer z-50"
               size={28}
