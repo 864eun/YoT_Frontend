@@ -1,11 +1,34 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { addMessage } from '../../store/chatslice';
+import { v4 as uuidv4 } from 'uuid';
 
 function ChatbotButton() {
   const [open, setOpen] = useState(false);
+  const [input, setInput] = useState('');
+  const dispatch = useDispatch();
+  const messages = useSelector((state: RootState) => state.chat.messages);
+
+  const handleSend = () => {
+    const trimmed = input.trim();
+    if (!trimmed) return;
+
+    const newMessage = {
+      id: uuidv4(),
+      sender: 'user',
+      content: trimmed,
+      timestamp: Date.now(),
+      status: 'pending' as const,
+    };
+
+    dispatch(addMessage(newMessage));
+    setInput('');
+  };
 
   return (
     <>
-      {/* 챗봇 버튼 */}
+      {/* 챗봇 열기 버튼 */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
@@ -32,7 +55,7 @@ function ChatbotButton() {
       {/* 챗봇 채팅창 */}
       {open && (
         <div className="fixed bottom-28 right-8 z-50 w-80 max-w-xs bg-gray-900 rounded-2xl shadow-2xl flex flex-col">
-          {/* 상단바 및 닫기 버튼 */}
+          {/* 상단바 */}
           <div className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-t-2xl">
             <span className="text-white font-bold">챗봇</span>
             <button
@@ -43,18 +66,43 @@ function ChatbotButton() {
               ×
             </button>
           </div>
-          {/* 채팅 내용 */}
-          <div className="flex-1 px-4 py-3 bg-gray-900 text-white overflow-y-auto text-sm">
-            좋아하는 영화 장르나 제목을 알려주세요.
+
+          {/* 메시지 목록 */}
+          <div className="flex-1 px-4 py-3 bg-gray-900 text-white overflow-y-auto text-sm space-y-2 max-h-80">
+            {messages.map(msg => (
+              <div key={msg.id}>
+                <strong
+                  className={
+                    msg.sender === 'user' ? 'text-yellow-300' : 'text-green-300'
+                  }
+                >
+                  {msg.sender === 'user' ? '🙋‍♀️ 사용자' : '🤖 챗봇'}
+                </strong>
+                : {msg.content}
+              </div>
+            ))}
           </div>
+
           {/* 입력창 */}
           <div className="flex items-center px-4 py-3 bg-gray-800 rounded-b-2xl">
             <input
               type="text"
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  handleSend();
+                }
+              }}
               className="flex-1 px-3 py-2 rounded-lg bg-gray-700 text-white border-none outline-none"
               placeholder="메시지를 입력하세요..."
             />
-            <button className="ml-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-3 py-2 rounded-lg transition-colors">
+            <button
+              onClick={handleSend}
+              className="ml-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-3 py-2 rounded-lg transition-colors"
+              aria-label="메시지 전송"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5"
