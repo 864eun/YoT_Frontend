@@ -5,5 +5,5 @@ export interface User {
   emailVerified: boolean;
   photoURL: string | null;
   providerId: string | null;
-  creationTime: user.metadata.creationTime ?? null, ;
+  creationTime: string | null;
 }
