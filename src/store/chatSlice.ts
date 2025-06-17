@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ChatMessage } from '../types/message';
+import { ChatMessage } from '../types/ChatMessage';
 
 interface ChatState {
   messages: ChatMessage[];
@@ -37,7 +37,7 @@ const chatSlice = createSlice({
       state.messages = [];
     },
     resetMessages(state) {
-      state.messages = [initialState.messages[0]]; // 초기 메시지만 남김
+      state.messages = [initialState.messages[0]];
     },
   },
 });

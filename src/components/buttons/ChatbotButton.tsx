@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { addMessage } from '../../store/chatslice';
+import { addMessage } from '../../store/chatSlice';
 import { v4 as uuidv4 } from 'uuid';
 
 function ChatbotButton() {

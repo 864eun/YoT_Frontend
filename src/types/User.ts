@@ -1,9 +1,9 @@
 export interface User {
   uid: string;
-  displayName: string;
-  email: string;
+  displayName: string | null;
+  email: string | null;
   emailVerified: boolean;
   photoURL: string | null;
-  providerId: string;
-  creationTime: string;
+  providerId: string | null;
+  creationTime: user.metadata.creationTime ?? null, ;
 }
