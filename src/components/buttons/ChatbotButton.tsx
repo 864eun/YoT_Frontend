@@ -19,8 +19,8 @@ function ChatbotButton() {
       sender: 'user',
       content: trimmed,
       timestamp: Date.now(),
-      status: 'pending' as const,
-    };
+      status: 'pending',
+    } as const;
 
     dispatch(addMessage(newMessage));
     setInput('');
@@ -76,7 +76,7 @@ function ChatbotButton() {
                     msg.sender === 'user' ? 'text-yellow-300' : 'text-green-300'
                   }
                 >
-                  {msg.sender === 'user' ? '🙋‍♀️ 사용자' : '🤖 챗봇'}
+                  {msg.sender === 'user' ? '🙋‍♀️ 사용자' : '🤖 YoT'}
                 </strong>
                 : {msg.content}
               </div>
