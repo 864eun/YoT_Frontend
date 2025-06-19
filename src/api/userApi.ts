@@ -12,14 +12,15 @@ function toBackendUser(user: User) {
   };
 }
 
-export const sendUserToBackend = async (user: User) => {
+// src/api/userApi.ts
+
+export const sendUserToBackend = async (idToken: string) => {
   try {
     const response = await fetch('http://127.0.0.1:8000/user/', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${idToken}`,
       },
-      body: JSON.stringify(toBackendUser(user)),
     });
     const data = await response.json();
     if (!response.ok) {
@@ -31,3 +32,23 @@ export const sendUserToBackend = async (user: User) => {
     throw error;
   }
 };
+
+// export const sendUserToBackend = async (user: User) => {
+//   try {
+//     const response = await fetch('http://127.0.0.1:8000/user/', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(toBackendUser(user)),
+//     });
+//     const data = await response.json();
+//     if (!response.ok) {
+//       throw new Error(data.detail || '유저 저장 실패');
+//     }
+//     return data;
+//   } catch (error) {
+//     console.error('백엔드 저장 실패:', error);
+//     throw error;
+//   }
+// };

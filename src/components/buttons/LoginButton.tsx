@@ -29,7 +29,11 @@ function LoginButton() {
       };
 
       dispatch(setUser(userInfo));
-      await sendUserToBackend(userInfo);
+
+      const idToken = await firebaseUser.getIdToken();
+      console.log(idToken);
+      await sendUserToBackend(idToken);
+      // await sendUserToBackend(userInfo);
 
       // Firestore 저장 등 추가 작업이 있다면 여기에
     } catch (err) {
