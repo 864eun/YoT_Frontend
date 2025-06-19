@@ -1,9 +1,10 @@
-// components/LoginButton.tsx
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../../firebase';
 import { setUser, clearUser } from '../../store/userSlice';
 import { RootState } from '../../store/store';
+import { sendUserToBackend } from '../../api/userApi';
+import { User } from '../../types/User';
 
 function LoginButton() {
   const dispatch = useDispatch();
@@ -13,23 +14,24 @@ function LoginButton() {
     try {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
-      const user = result.user;
+      const firebaseUser = result.user;
 
-      // 타입 정의에 맞춰 객체 생성
-      const userInfo = {
-        uid: user.uid,
-        displayName: user.displayName,
-        email: user.email,
-        emailVerified: user.emailVerified,
-        photoURL: user.photoURL,
-        providerId: user.providerId,
-        creationTime: user.metadata.creationTime ?? null,
+      // User 타입에 맞게 변환
+      const userInfo: User = {
+        id: firebaseUser.uid,
+        displayName: firebaseUser.displayName,
+        email: firebaseUser.email,
+        emailVerified: firebaseUser.emailVerified,
+        providerId: firebaseUser.providerId,
+        creationTime: firebaseUser.metadata.creationTime
+          ? new Date(firebaseUser.metadata.creationTime).toISOString()
+          : null,
       };
 
       dispatch(setUser(userInfo));
+      await sendUserToBackend(userInfo);
 
-      // Firestore 저장 (선택 사항)
-      // await setDoc(doc(db, 'users', user.uid), userInfo);
+      // Firestore 저장 등 추가 작업이 있다면 여기에
     } catch (err) {
       console.error(err);
     }
